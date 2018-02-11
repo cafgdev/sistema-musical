@@ -1,6 +1,12 @@
+@import typograpy
+$fresh: #4abdac
+$vermillion: #fc4a1a
+$sunshine: #f7b733
+$clean: #dfdce3
 
 *
-    transition: background-color 400ms
+    transition: all 400ms
+    font-family: 'Ubuntu', sans-serif
 
 body
     display: grid
@@ -17,7 +23,7 @@ header
     padding-top: 10px
     .tom
         grid-area: tom
-        background-color: #999
+        background-color: $sunshine
         width: 100px
         height: 100px
         border-radius: 50%
@@ -28,9 +34,20 @@ header
             text-align: center
             strong
                 color: #111
+                font-family: 'Pacifico', cursive
     .dados-louvor
         grid-area: dados
         text-align: center
+        h1
+            font-family: 'Pacifico', cursive
+            //letter-spacing: 0.1em
+            margin-top: 5%
+            margin-bottom: 0px
+            color: $vermillion
+        h3
+            font-weight: 300
+            margin-top: 0px
+
     .bmp
         grid-area: bmp
         text-align: right
@@ -38,17 +55,22 @@ header
         strong
             font-size: 2em
             font-style: italic
+            font-family: 'Pacifico', cursive
+            color: $sunshine
 /* Conteudo Principal */
 main
     grid-area: main
     display: flex
     flex-direction: column
     .observacoes
-        background-color: #ccc
+        background-color: rgba($sunshine,0.2)
         padding: 10px
         ul
             li
                 list-style: none
+                strong
+                    color: $vermillion
+                    font-style: italic
     .andamento-da-musica
         display: flex
         justify-content: center
@@ -59,13 +81,15 @@ main
                 display: inline-block
                 z-index: 5
                 a
-                    background-color: #999
+                    background-color: $sunshine
                     padding: 15px
                     margin: 0px 5px
                     text-decoration: none
                     color: #fff
                     &:hover
-                        background-color: #ccc
+                        background-color: $fresh
+                    &.active
+                        background-color: $fresh
     .letra
         ul
             padding: 0px
@@ -76,26 +100,29 @@ main
                 .instrumentos
                     width: 200px
                     ul
-                        background-color: #999
+                        background-color: $sunshine
                         text-align: right
                         li
                             display: inline-block
-                            margin: 5px
+                            margin: 0px
+                            font-size: 2em
                 .estrofe
-                    border: 1px solid #999
+                    border: 2px solid $clean
                     width: 600px
                     &.active
-                        background-color: #ccc
-                        border: 1px solid #ccc
-                    /* Indicador do Parte da Musica usado para escrever o andamento da musica. Exemplo: Parte A da Musica, Parte B da Musica. */
-                    &::before
-                        content: "A"
-                        position: relative
-                        top: 9px
-                        right: -568px
-                        background-color: #111
+                        background-color: $vermillion
+                        border: 1px solid $vermillion
                         color: #fff
+                        .estrofe-nome
+                            background-color: #fff
+                            color: $vermillion
+                    .estrofe-nome
+                        background-color: $fresh
+                        float: right
+                        width: 10px
                         padding: 10px
+                        color: #fff
+                    /* Indicador do Parte da Musica usado para escrever o andamento da musica. Exemplo: Parte A da Musica, Parte B da Musica. */
                     pre
                         padding: 10px 10%
 
@@ -107,4 +134,18 @@ footer
     text-align: center
     padding: 10px 0px
     width: 100%
-    background-color: #ccc
+    background-color: $sunshine
+    .opcoes
+        li
+            list-style: none
+            display: inline-block
+            text-align: center
+            a
+                text-decoration: none
+                color: #fff
+                padding: 10px 15px
+                
+                &:hover
+                    background-color: $vermillion
+                    color: #fff
+                    

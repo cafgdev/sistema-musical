@@ -1,113 +1,248 @@
 @charset "UTF-8";
+/* File to Import Fonts */
+@import url("https://fonts.googleapis.com/css?family=Pacifico|Ubuntu:300,300i,400,400i,500,500i,700,700i");
+/* line 7, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
 * {
-  transition: background-color 400ms; }
+  transition: all 400ms;
+  font-family: 'Ubuntu', sans-serif;
+}
 
+/* line 11, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
 body {
   display: grid;
   grid-template-columns: 1fr 400px 400px 1fr;
   grid-template-rows: auto auto auto auto;
-  grid-template-areas: ". header header ." ". main main ." ". sidebar sidebar ." ". footer footer ."; }
+  grid-template-areas: ". header header ." ". main main ." ". sidebar sidebar ." ". footer footer .";
+}
 
 /* Cabeçalho */
+/* line 17, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
 header {
   grid-area: header;
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 150px 60px;
   grid-template-areas: "tom dados" "bmp bmp";
-  padding-top: 10px; }
-  header .tom {
-    grid-area: tom;
-    background-color: #999;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 20px;
-    padding: 10px;
-    font-size: 24px; }
-    header .tom p {
-      text-align: center; }
-      header .tom p strong {
-        color: #111; }
-  header .dados-louvor {
-    grid-area: dados;
-    text-align: center; }
-  header .bmp {
-    grid-area: bmp;
-    text-align: right;
-    padding: 10px 5px; }
-    header .bmp strong {
-      font-size: 2em;
-      font-style: italic; }
+  padding-top: 10px;
+}
+
+/* line 24, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+header .tom {
+  grid-area: tom;
+  background-color: #f7b733;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 20px;
+  padding: 10px;
+  font-size: 24px;
+}
+
+/* line 33, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+header .tom p {
+  text-align: center;
+}
+
+/* line 35, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+header .tom p strong {
+  color: #111;
+  font-family: 'Pacifico', cursive;
+}
+
+/* line 38, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+header .dados-louvor {
+  grid-area: dados;
+  text-align: center;
+}
+
+/* line 41, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+header .dados-louvor h1 {
+  font-family: 'Pacifico', cursive;
+  margin-top: 5%;
+  margin-bottom: 0px;
+  color: #fc4a1a;
+}
+
+/* line 47, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+header .dados-louvor h3 {
+  font-weight: 300;
+  margin-top: 0px;
+}
+
+/* line 51, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+header .bmp {
+  grid-area: bmp;
+  text-align: right;
+  padding: 10px 5px;
+}
+
+/* line 55, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+header .bmp strong {
+  font-size: 2em;
+  font-style: italic;
+  font-family: 'Pacifico', cursive;
+  color: #f7b733;
+}
 
 /* Conteudo Principal */
+/* line 61, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
 main {
   grid-area: main;
   display: flex;
-  flex-direction: column; }
-  main .observacoes {
-    background-color: #ccc;
-    padding: 10px; }
-    main .observacoes ul li {
-      list-style: none; }
-  main .andamento-da-musica {
-    display: flex;
-    justify-content: center; }
-    main .andamento-da-musica ul {
-      padding: 15px 0px 5px; }
-      main .andamento-da-musica ul li {
-        list-style: none;
-        display: inline-block;
-        z-index: 5; }
-        main .andamento-da-musica ul li a {
-          background-color: #999;
-          padding: 15px;
-          margin: 0px 5px;
-          text-decoration: none;
-          color: #fff; }
-          main .andamento-da-musica ul li a:hover {
-            background-color: #ccc; }
-  main .letra ul {
-    padding: 0px; }
-    main .letra ul li {
-      display: flex;
-      list-style: none;
-      margin-bottom: 35px; }
-      main .letra ul li .instrumentos {
-        width: 200px; }
-        main .letra ul li .instrumentos ul {
-          background-color: #999;
-          text-align: right; }
-          main .letra ul li .instrumentos ul li {
-            display: inline-block;
-            margin: 5px; }
-      main .letra ul li .estrofe {
-        border: 1px solid #999;
-        width: 600px;
-        /* Indicador do Parte da Musica usado para escrever o andamento da musica. Exemplo: Parte A da Musica, Parte B da Musica. */ }
-        main .letra ul li .estrofe.active {
-          background-color: #ccc;
-          border: 1px solid #ccc; }
-        main .letra ul li .estrofe::before {
-          content: "A";
-          position: relative;
-          top: 9px;
-          right: -568px;
-          background-color: #111;
-          color: #fff;
-          padding: 10px; }
-        main .letra ul li .estrofe pre {
-          padding: 10px 10%; }
+  flex-direction: column;
+}
 
+/* line 65, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .observacoes {
+  background-color: rgba(247, 183, 51, 0.2);
+  padding: 10px;
+}
+
+/* line 69, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .observacoes ul li {
+  list-style: none;
+}
+
+/* line 71, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .observacoes ul li strong {
+  color: #fc4a1a;
+  font-style: italic;
+}
+
+/* line 74, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .andamento-da-musica {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 77, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .andamento-da-musica ul {
+  padding: 15px 0px 5px;
+}
+
+/* line 79, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .andamento-da-musica ul li {
+  list-style: none;
+  display: inline-block;
+  z-index: 5;
+}
+
+/* line 83, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .andamento-da-musica ul li a {
+  background-color: #f7b733;
+  padding: 15px;
+  margin: 0px 5px;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* line 89, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .andamento-da-musica ul li a:hover {
+  background-color: #4abdac;
+}
+
+/* line 91, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .andamento-da-musica ul li a.active {
+  background-color: #4abdac;
+}
+
+/* line 94, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .letra ul {
+  padding: 0px;
+}
+
+/* line 96, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .letra ul li {
+  display: flex;
+  list-style: none;
+  margin-bottom: 35px;
+}
+
+/* line 100, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .letra ul li .instrumentos {
+  width: 200px;
+}
+
+/* line 102, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .letra ul li .instrumentos ul {
+  background-color: #f7b733;
+  text-align: right;
+}
+
+/* line 105, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .letra ul li .instrumentos ul li {
+  display: inline-block;
+  margin: 0px;
+  font-size: 2em;
+}
+
+/* line 109, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .letra ul li .estrofe {
+  border: 2px solid #dfdce3;
+  width: 600px;
+  /* Indicador do Parte da Musica usado para escrever o andamento da musica. Exemplo: Parte A da Musica, Parte B da Musica. */
+}
+
+/* line 112, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .letra ul li .estrofe.active {
+  background-color: #fc4a1a;
+  border: 1px solid #fc4a1a;
+  color: #fff;
+}
+
+/* line 116, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .letra ul li .estrofe.active .estrofe-nome {
+  background-color: #fff;
+  color: #fc4a1a;
+}
+
+/* line 119, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .letra ul li .estrofe .estrofe-nome {
+  background-color: #4abdac;
+  float: right;
+  width: 10px;
+  padding: 10px;
+  color: #fff;
+}
+
+/* line 126, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+main .letra ul li .estrofe pre {
+  padding: 10px 10%;
+}
+
+/* line 129, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
 aside {
   grid-area: sidebar;
-  display: none; }
+  display: none;
+}
 
+/* line 132, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
 footer {
   grid-area: footer;
   text-align: center;
   padding: 10px 0px;
   width: 100%;
-  background-color: #ccc; }
+  background-color: #f7b733;
+}
 
-/*# sourceMappingURL=style.css.map */
+/* line 139, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+footer .opcoes li {
+  list-style: none;
+  display: inline-block;
+  text-align: center;
+}
+
+/* line 143, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+footer .opcoes li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px 15px;
+}
+
+/* line 148, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
+footer .opcoes li a:hover {
+  background-color: #fc4a1a;
+  color: #fff;
+}
+
+/*# sourceMappingURL=../css/style.map */
