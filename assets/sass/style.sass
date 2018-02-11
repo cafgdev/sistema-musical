@@ -1,35 +1,110 @@
-@font-face
-	font-family: 'Indie Flower'
-	src: url('../fonts/IndieFlower.ttf')
 
+*
+    transition: background-color 400ms
 
+body
+    display: grid
+    grid-template-columns: 1fr 400px 400px 1fr
+    grid-template-rows: auto auto auto auto
+    grid-template-areas: ". header header ." ". main main ." ". sidebar sidebar ." ". footer footer ."
+/* Cabeçalho */
+header
+    grid-area: header
+    display: grid
+    grid-template-columns: auto 1fr
+    grid-template-rows: 150px 60px
+    grid-template-areas: "tom dados" "bmp bmp"
+    padding-top: 10px
+    .tom
+        grid-area: tom
+        background-color: #999
+        width: 100px
+        height: 100px
+        border-radius: 50%
+        margin: 20px
+        padding: 10px
+        font-size: 24px
+        p
+            text-align: center
+            strong
+                color: #111
+    .dados-louvor
+        grid-area: dados
+        text-align: center
+    .bmp
+        grid-area: bmp
+        text-align: right
+        padding: 10px 5px
+        strong
+            font-size: 2em
+            font-style: italic
+/* Conteudo Principal */
+main
+    grid-area: main
+    display: flex
+    flex-direction: column
+    .observacoes
+        background-color: #ccc
+        padding: 10px
+        ul
+            li
+                list-style: none
+    .andamento-da-musica
+        display: flex
+        justify-content: center
+        ul      
+            padding: 15px 0px 5px
+            li
+                list-style: none
+                display: inline-block
+                z-index: 5
+                a
+                    background-color: #999
+                    padding: 15px
+                    margin: 0px 5px
+                    text-decoration: none
+                    color: #fff
+                    &:hover
+                        background-color: #ccc
+    .letra
+        ul
+            padding: 0px
+            li
+                display: flex
+                list-style: none
+                margin-bottom: 35px
+                .instrumentos
+                    width: 200px
+                    ul
+                        background-color: #999
+                        text-align: right
+                        li
+                            display: inline-block
+                            margin: 5px
+                .estrofe
+                    border: 1px solid #999
+                    width: 600px
+                    &.active
+                        background-color: #ccc
+                        border: 1px solid #ccc
+                    /* Indicador do Parte da Musica usado para escrever o andamento da musica. Exemplo: Parte A da Musica, Parte B da Musica. */
+                    &::before
+                        content: "A"
+                        position: relative
+                        top: 9px
+                        right: -568px
+                        background-color: #111
+                        color: #fff
+                        padding: 10px
+                    pre
+                        padding: 10px 10%
 
-.tom
-	background-color: #ccc
-	border-radius: 50%
-	width: 100px
-	height: 100px	
-	justify-content: center
-	display: flex
-	align-items: center
-	text-align: center
-	h3
-		font-size: 18px
-		strong
-			font-size: 28px
-
-.dados-musica
-	h1
-		font:
-			family: 'Indie Flower'
-			size: 36px
-	p
-		font:
-			family: 'sans-serif'
-			size: 18px
-		letter-spacing: 7px
-
-.info
-	background-color: #ccc
-	.info-content
-
+aside
+    grid-area: sidebar
+    display: none
+footer
+    grid-area: footer
+    text-align: center
+    padding: 10px 0px
+    width: 100%
+    background-color: #ccc
