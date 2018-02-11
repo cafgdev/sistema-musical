@@ -158,3 +158,57 @@ footer
                     background-color: $vermillion
                     color: #fff
                     
+@media screen and (max-width: 768px)
+    body
+        grid-template-columns: 100%
+        grid-template-areas: "header" "main" "sidebar" "footer"
+    header
+        grid-template-columns: 1fr 1fr
+        grid-template-rows: 150px 150px  
+        grid-template-areas: "dados dados" "tom bmp"
+        margin: 0px
+        .tom
+            border-radius: 0px
+            margin-right: 0px
+            margin: 10px 0px
+            padding: 0px
+            text-align: center
+            width: 100%
+
+        .bmp
+            background-color: rgba($sunshine, 0.2)
+            margin: 10px 0px
+            padding: 0px
+            text-align: center
+            height: 100px
+            width: 100%
+    main
+        display: flex
+        .observacoes
+            width: 100%
+        .andamento-da-musica
+        .letra
+            ul
+                li
+                    display: grid
+                    grid-template-columns: 100%
+                    .instrumentos
+                        width: 100%
+                        ul
+                            text-align: center
+                    .estrofe
+                        width: 100%
+                        border: none
+                        background-color: rgba($sunshine, 0.2)
+                        pre
+                            font-size: 1em
+                            padding: 20px 0px 
+                            width: 100%
+                            white-space: pre-wrap
+    footer
+        .opcoes
+            li
+                display: flex
+                margin: 10px
+                justify-content: center
+                            
