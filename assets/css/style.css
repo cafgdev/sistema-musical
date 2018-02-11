@@ -320,7 +320,7 @@ footer .opcoes li a:hover {
   /* line 203, /Volumes/DADOS/Sistema de Organização/Pessoal/Projetos/Sistema Musical/Code/front/assets/sass/style.sass */
   main .letra ul li .estrofe pre {
     font-size: 1em;
-    padding: 20px 0px;
+    padding: 20px 10px;
     width: 100%;
     white-space: pre-wrap;
   }
