@@ -29,12 +29,16 @@ header
         border-radius: 50%
         margin: 20px
         padding: 10px
-        font-size: 24px
+        color: #fff
         p
             text-align: center
+            font-size: 1em
             strong
                 color: #111
                 font-family: 'Pacifico', cursive
+                font-size: 2em
+                color: #fff
+                letter-spacing: 0.1em
     .dados-louvor
         grid-area: dados
         text-align: center
@@ -87,9 +91,9 @@ main
                     text-decoration: none
                     color: #fff
                     &:hover
-                        background-color: $fresh
+                        background-color: $vermillion
                     &.active
-                        background-color: $fresh
+                        background-color: $vermillion
     .letra
         ul
             padding: 0px
@@ -116,6 +120,9 @@ main
                         .estrofe-nome
                             background-color: #fff
                             color: $vermillion
+                        pre
+                            b
+                                color: #fff
                     .estrofe-nome
                         background-color: $fresh
                         float: right
@@ -125,6 +132,8 @@ main
                     /* Indicador do Parte da Musica usado para escrever o andamento da musica. Exemplo: Parte A da Musica, Parte B da Musica. */
                     pre
                         padding: 10px 10%
+                        b
+                            color: $vermillion
 
 aside
     grid-area: sidebar
