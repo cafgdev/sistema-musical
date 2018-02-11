@@ -164,6 +164,7 @@ footer
     body
         grid-template-columns: 100%
         grid-template-areas: "header" "main" "sidebar" "footer"
+        overflow-x: hidden
     header
         grid-template-columns: 1fr 1fr
         grid-template-rows: 150px 150px  
@@ -190,6 +191,7 @@ footer
         display: flex
         .observacoes
             width: 100%
+            padding: 10px 0px
         .andamento-da-musica
         .letra
             ul
@@ -204,11 +206,16 @@ footer
                         width: 100%
                         border: none
                         background-color: rgba($sunshine, 0.2)
+                        &.active
+                            border: none
+                            .estrofe-nome
+                                border: 1px solid $vermillion
                         pre
                             font-size: 1em
                             padding: 20px 10px 
                             width: 100%
                             white-space: pre-wrap
+                        
     footer
         .opcoes
             li
